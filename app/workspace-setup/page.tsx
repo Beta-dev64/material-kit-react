@@ -20,8 +20,7 @@ export default async function WorkspaceSetupPage() {
     <main className="auth-page auth-page-centered">
       <section aria-labelledby="setup-title" className="auth-card">
         <a aria-label="Kredia home" className="auth-brand" href="/">
-          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={44} />
-          <span>Kredia</span>
+          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={155} />
         </a>
         <p className="eyebrow">Your organization</p>
         <h1 id="setup-title">Set up your workspace</h1>

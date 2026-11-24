@@ -11,8 +11,7 @@ export default async function AuthPage({ params }: { params: Promise<{ path: str
     <main className="auth-page">
       <section aria-labelledby="auth-title" className="auth-card">
         <a aria-label="Kredia home" className="auth-brand" href="/">
-          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={44} />
-          <span>Kredia</span>
+          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={155} />
         </a>
         <p className="eyebrow">Receivables, in rhythm</p>
         <h1 id="auth-title">{path === 'sign-in' ? 'Welcome back' : 'Start with clarity'}</h1>

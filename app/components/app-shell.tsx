@@ -45,8 +45,7 @@ export function AppShell({ children, organizationName, userName }: { children: R
     <div className="app-frame">
       <aside className={`sidebar ${menuOpen ? 'sidebar-open' : ''}`}>
         <Link aria-label="Kredia overview" className="brand-lockup" href="/overview">
-          <Image alt="" height={38} priority src="/branding/kredia-logo.png" width={38} />
-          <span>Kredia</span>
+          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={155} />
         </Link>
         <div className="workspace-switcher">
           <span className="workspace-mark">{organizationName.slice(0, 1).toUpperCase()}</span>

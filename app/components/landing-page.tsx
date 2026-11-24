@@ -75,8 +75,7 @@ export function LandingPage() {
     <main className="landing-page">
       <header className="landing-header">
         <Link aria-label="Kredia home" className="landing-brand" href="/">
-          <Image alt="" height={38} priority src="/branding/kredia-logo.png" width={38} />
-          <span>Kredia</span>
+          <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={155} />
         </Link>
         <nav aria-label="Main navigation" className="landing-nav">
           <a href="#platform">Platform</a>
@@ -232,8 +231,7 @@ export function LandingPage() {
       </section>
       <footer className="landing-footer">
         <Link aria-label="Kredia home" className="landing-brand" href="/">
-          <Image alt="" height={30} src="/branding/kredia-logo.png" width={30} />
-          <span>Kredia</span>
+          <Image alt="" height={40} src="/branding/kredia-logo.png" width={140} />
         </Link>
         <span>Receivables, in rhythm.</span>
         <div>
