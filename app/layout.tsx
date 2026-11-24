@@ -4,11 +4,11 @@ import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Kredia | Accounts receivable, in rhythm',
+    default: 'Kredia | Receivables workspace prototype',
     template: '%s | Kredia',
   },
   description:
-    'Kredia helps finance teams manage accounts receivable, prioritize collections, reconcile payments, and keep every customer balance accountable.',
+    'Explore Kredia’s JSON-backed frontend prototype for receivables administration, tenant organizations, collections, and payments.',
   applicationName: 'Kredia',
   keywords: [
     'accounts receivable management',

@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "user-platform-admin",
+      "name": "Kredia Administrator",
+      "email": "admin@kredia.demo",
+      "password": "Kredia2026!",
+      "role": "platform_admin",
+      "organizationId": null
+    },
+    {
+      "id": "user-tenant-admin",
+      "name": "Amara Okafor",
+      "email": "amara@northstar.demo",
+      "password": "Kredia2026!",
+      "role": "tenant_admin",
+      "organizationId": "org-northstar"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org-northstar",
+      "name": "Northstar Foods",
+      "slug": "northstar-foods",
+      "ownerEmail": "amara@northstar.demo",
+      "status": "active",
+      "customerCount": 128,
+      "openMinor": "48625000000",
+      "overdueMinor": "12845000000",
+      "disputedMinor": "1840000000",
+      "unappliedMinor": "3250000000",
+      "currency": "NGN",
+      "createdAt": "2026-11-18T09:00:00.000Z"
+    }
+  ]
+}
