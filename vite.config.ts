@@ -31,6 +31,6 @@ export default defineConfig({
       },
     ],
   },
-  server: { port: PORT, host: true },
+  server: { port: PORT, host: true, allowedHosts: ['sb-55s8w303iixw.vercel.run'] },
   preview: { port: PORT, host: true },
 });
