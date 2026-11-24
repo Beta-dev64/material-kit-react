@@ -20,9 +20,11 @@
     /* Linting */
     "strict": true,
     "noEmit": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./*"] }
   },
-  "include": ["src"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "app/**/*.ts", "app/**/*.tsx", "lib/**/*.ts"],
   "exclude": ["node_modules"],
   "references": [
     {
