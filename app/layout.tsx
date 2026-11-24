@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Kredia | Receivables operations',
-  description: 'A clear, controlled workspace for receivables, collections, and cash application.',
+  title: 'Kredia | Receivables, in rhythm',
+  description: 'Bring receivables, payment activity, and follow-up work into one clear, accountable workspace.',
   applicationName: 'Kredia',
 };
 

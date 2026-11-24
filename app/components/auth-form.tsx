@@ -36,7 +36,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
-      router.replace(isSignUp ? '/workspace-setup' : '/');
+      router.replace(isSignUp ? '/workspace-setup' : '/overview');
       router.refresh();
     } catch {
       setError('We couldn’t complete that request. Check your details and try again.');

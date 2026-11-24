@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { authClient } from '@/lib/auth/client';
 
 const navigation = [
-  { label: 'Overview', href: '/', icon: 'grid' },
+  { label: 'Overview', href: '/overview', icon: 'grid' },
   { label: 'Collections', href: '/collections', icon: 'layers' },
   { label: 'Customers', href: '/customers', icon: 'users' },
   { label: 'Invoices', href: '/invoices', icon: 'file' },
@@ -44,7 +44,7 @@ export function AppShell({ children, organizationName, userName }: { children: R
   return (
     <div className="app-frame">
       <aside className={`sidebar ${menuOpen ? 'sidebar-open' : ''}`}>
-        <Link aria-label="Kredia overview" className="brand-lockup" href="/">
+        <Link aria-label="Kredia overview" className="brand-lockup" href="/overview">
           <Image alt="" height={38} priority src="/branding/kredia-logo.png" width={38} />
           <span>Kredia</span>
         </Link>
