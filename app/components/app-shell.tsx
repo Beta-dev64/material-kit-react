@@ -85,6 +85,7 @@ export function AppShell({ children, organizationName, userName }: { children: R
           <div className="topbar-actions">
             <button aria-label="Search" className="icon-button" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5" /></svg></button>
             <button aria-label="Notifications" className="icon-button notification-button" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg><i /></button>
+            <button aria-label="Sign out from Kredia" className="topbar-signout" onClick={signOut} type="button">Sign out</button>
             <span aria-hidden="true" className="topbar-avatar">{userName.slice(0, 1).toUpperCase()}</span>
           </div>
         </header>

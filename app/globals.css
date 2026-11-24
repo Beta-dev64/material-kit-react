@@ -82,6 +82,9 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .topbar-actions { display: flex; align-items: center; gap: 10px; }
 .icon-button { position: relative; display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 9px; background: transparent; color: #6d7c79; cursor: pointer; }
 .icon-button:hover { background: #f0f5f2; }
+.topbar-signout { padding: 8px 11px; border: 1px solid #dfe8e4; border-radius: 8px; background: transparent; color: #52645e; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.topbar-signout:hover { border-color: #c9d8d2; background: #f0f5f2; color: #263c38; }
+.topbar-signout:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .icon-button svg { width: 18px; height: 18px; }
 .notification-button i { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border: 1px solid white; border-radius: 50%; background: var(--teal); }
 .topbar-avatar { margin-left: 5px; }
