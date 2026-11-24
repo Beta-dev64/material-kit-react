@@ -183,6 +183,7 @@ export async function getSectionRecords(section: string, organizationId: string)
         { key: 'overdueMinor', label: 'Past due', kind: 'currency' },
       ],
       rows: data.collectors.map((item) => ({
+        customerId: item.customerId,
         customerName: item.customerName,
         customerNumber: item.customerNumber,
         overdueInvoices: String(item.overdueInvoices),

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import { AppShell } from '@/app/components/app-shell';
+import { CollectionQueue } from '@/app/components/collection-queue';
 import { SectionRecords } from '@/app/components/section-records';
 import { getActiveOrganizationContext } from '@/lib/auth/organization';
 import { getSectionRecords } from '@/lib/db/sections';
@@ -32,7 +33,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
           <div><p className="eyebrow">WORKSPACE</p><h1>{content.title}</h1><p className="page-subtitle">{content.description}</p></div>
           {content.action && <button className="button button-primary" type="button"><span aria-hidden="true">＋</span> {content.action}</button>}
         </div>
-        <SectionRecords records={records} title={content.title} />
+        {section === 'collections' ? <CollectionQueue records={records} /> : <SectionRecords records={records} title={content.title} />}
       </div>
     </AppShell>
   );

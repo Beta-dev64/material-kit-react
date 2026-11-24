@@ -91,7 +91,7 @@ export async function getDashboardData(organizationId: string): Promise<Dashboar
       GROUP BY c.id, c.name, c.customer_number
       ORDER BY SUM(CASE WHEN b.due_at < CURRENT_DATE THEN GREATEST(b.balance_minor, 0) ELSE 0 END) DESC,
         SUM(GREATEST(b.balance_minor, 0)) DESC
-      LIMIT 5
+      LIMIT 100
     )
     SELECT
       COALESCE((SELECT base_currency FROM kredia_organization_settings WHERE organization_id = ${organizationId}::uuid), 'NGN') AS currency,

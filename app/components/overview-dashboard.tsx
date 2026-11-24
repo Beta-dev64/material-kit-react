@@ -114,7 +114,7 @@ export function OverviewDashboard({ data }: { data: DashboardData }) {
           </div>
           {data.collectors.length ? (
             <div className="queue-list">
-              {data.collectors.map((item, index) => (
+              {data.collectors.slice(0, 5).map((item, index) => (
                 <Link className="queue-item" href={`/customers/${item.customerId}`} key={item.customerId}>
                   <span className={`queue-avatar queue-avatar-${index + 1}`}>{item.customerName.slice(0, 1).toUpperCase()}</span>
                   <span className="queue-customer"><strong>{item.customerName}</strong><small>{item.customerNumber} · {item.overdueInvoices} overdue invoice{item.overdueInvoices === 1 ? '' : 's'}</small></span>
