@@ -167,6 +167,14 @@ h1 { margin-bottom: 7px; color: var(--ink); font-size: clamp(25px, 2.5vw, 31px);
 .activity-panel, .cash-panel { min-height: 190px; }
 .more-button { border: 0; background: transparent; color: #879590; letter-spacing: 2px; cursor: pointer; }
 .activity-empty { position: relative; min-height: 112px; padding: 20px; }
+.activity-list { display: grid; margin-top: 13px; }
+.activity-item { display: flex; align-items: flex-start; gap: 11px; padding: 10px 0; border-bottom: 1px solid #f0f3f1; }
+.activity-item:last-child { border-bottom: 0; }
+.activity-marker { display: grid; width: 27px; height: 27px; flex: 0 0 auto; place-items: center; border-radius: 8px; background: #eaf4f0; color: #298172; font-size: 11px; font-weight: 700; }
+.activity-copy { display: grid; min-width: 0; flex: 1; gap: 4px; }
+.activity-copy strong { overflow: hidden; color: #40554f; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.activity-copy span, .activity-time { color: #95a29e; font-size: 9px; }
+.activity-time { flex: 0 0 auto; padding-top: 2px; }
 .activity-line { position: absolute; top: 0; left: 50%; height: 14px; border-left: 1px dashed #cbd8d2; }
 .cash-icon { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: #e9f4f2; color: #168477; }
 .cash-total { display: block; margin: 23px 0 13px; color: var(--ink); font-family: var(--font-display); font-size: 25px; letter-spacing: -.7px; }

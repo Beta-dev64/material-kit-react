@@ -20,6 +20,7 @@ export type DashboardData = {
   unappliedMinor: string;
   aging: { label: string; amountMinor: string }[];
   collectors: CollectorItem[];
+  activity: { id: string; action: string; entityType: string; createdAt: string }[];
 };
 
 export async function getDashboardData(organizationId: string): Promise<DashboardData> {
@@ -126,6 +127,14 @@ export async function getDashboardData(organizationId: string): Promise<Dashboar
       )) FROM collector_queue), '[]'::json) AS collectors
   `);
 
+  const activityResult = await db.execute(sql`
+    SELECT id::text AS id, action, entity_type, created_at::text AS created_at
+    FROM kredia_audit_events
+    WHERE organization_id = ${organizationId}::uuid
+    ORDER BY created_at DESC
+    LIMIT 5
+  `);
+
   const row = result.rows[0] as {
     currency: string;
     open_minor: string;
@@ -144,5 +153,14 @@ export async function getDashboardData(organizationId: string): Promise<Dashboar
     unappliedMinor: row.unapplied_minor,
     aging: row.aging,
     collectors: row.collectors,
+    activity: activityResult.rows.map((event) => {
+      const activity = event as { id: string; action: string; entity_type: string; created_at: string };
+      return {
+        id: activity.id,
+        action: activity.action,
+        entityType: activity.entity_type,
+        createdAt: activity.created_at,
+      };
+    }),
   };
 }

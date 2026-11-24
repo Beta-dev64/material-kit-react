@@ -30,6 +30,18 @@ function share(amount: string, total: string) {
   return Number(ratio > 100n ? 100n : ratio);
 }
 
+function activityLabel(action: string) {
+  return action
+    .replace(/[._-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
+function activityEntityLabel(entityType: string) {
+  return entityType.replace(/[._-]+/g, ' ').replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
 function MetricCard({ label, value, note, accent, icon }: { label: string; value: string; note: string; accent: string; icon: string }) {
   return (
     <article className="metric-card">
@@ -120,7 +132,24 @@ export function OverviewDashboard({ data }: { data: DashboardData }) {
       <section className="bottom-grid" data-reveal>
         <article className="panel activity-panel">
           <div className="panel-heading"><div><h2>Recent activity</h2><p>Latest events across your ledger</p></div><button aria-label="More activity options" className="more-button" type="button">•••</button></div>
-          <div className="empty-state activity-empty"><span className="activity-line" /><strong>Nothing new, for now</strong><span>Imports, receipts, and collection notes will show up here.</span></div>
+          {data.activity.length ? (
+            <div aria-label="Latest tenant activity" className="activity-list">
+              {data.activity.map((event) => (
+                <article className="activity-item" key={event.id}>
+                  <span aria-hidden="true" className="activity-marker">{activityEntityLabel(event.entityType).slice(0, 1) || '•'}</span>
+                  <span className="activity-copy">
+                    <strong>{activityLabel(event.action)}</strong>
+                    <span>{activityEntityLabel(event.entityType)}</span>
+                  </span>
+                  <time className="activity-time" dateTime={event.createdAt}>
+                    {new Intl.DateTimeFormat('en-NG', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(event.createdAt))}
+                  </time>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-state activity-empty"><strong>Nothing new, for now</strong><span>Ledger changes recorded for this workspace will appear here.</span></div>
+          )}
         </article>
         <article className="panel cash-panel">
           <div className="panel-heading"><div><h2>Cash position</h2><p>Confirmed funds awaiting allocation</p></div><span className="cash-icon">↔</span></div>
