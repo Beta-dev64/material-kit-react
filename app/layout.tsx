@@ -1,10 +1,37 @@
-import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
+import type { Metadata, Viewport } from 'next';
+
 export const metadata: Metadata = {
-  title: 'Kredia | Receivables, in rhythm',
-  description: 'Bring receivables, payment activity, and follow-up work into one clear, accountable workspace.',
+  title: {
+    default: 'Kredia | Accounts receivable, in rhythm',
+    template: '%s | Kredia',
+  },
+  description:
+    'Kredia helps finance teams manage accounts receivable, prioritize collections, reconcile payments, and keep every customer balance accountable.',
   applicationName: 'Kredia',
+  keywords: [
+    'accounts receivable management',
+    'receivables dashboard',
+    'collections management',
+    'invoice reconciliation',
+    'payment allocation',
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'en_NG',
+    siteName: 'Kredia',
+    title: 'Kredia | Accounts receivable, in rhythm',
+    description:
+      'Manage accounts receivable, collections, and payments in one clear, accountable workspace.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kredia | Accounts receivable, in rhythm',
+    description:
+      'Manage accounts receivable, collections, and payments in one clear, accountable workspace.',
+  },
 };
 
 export const viewport: Viewport = {

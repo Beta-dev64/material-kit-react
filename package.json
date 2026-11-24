@@ -39,6 +39,7 @@
     "@mui/material": "^7.0.1",
     "@mui/material-nextjs": "^7",
     "@neondatabase/auth": "^0.7.0-beta",
+    "animejs": "4.5.0",
     "apexcharts": "^4.5.0",
     "dayjs": "^1.11.13",
     "drizzle-orm": "^0.45.4",

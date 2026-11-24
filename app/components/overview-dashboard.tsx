@@ -1,6 +1,7 @@
-import Link from 'next/link';
-
 import type { DashboardData } from '@/lib/db/dashboard';
+
+import Link from 'next/link';
+import { PageMotion } from '@/app/components/page-motion';
 
 function money(minor: string, currency: string) {
   let amount: bigint;
@@ -48,7 +49,8 @@ export function OverviewDashboard({ data }: { data: DashboardData }) {
 
   return (
     <div className="dashboard-page">
-      <div className="page-heading-row">
+      <PageMotion />
+      <div className="page-heading-row" data-reveal>
         <div>
           <p className="eyebrow">{today}</p>
           <h1>Receivables overview</h1>
@@ -60,14 +62,14 @@ export function OverviewDashboard({ data }: { data: DashboardData }) {
         </div>
       </div>
 
-      <section aria-label="Receivables summary" className="metric-grid">
+      <section aria-label="Receivables summary" className="metric-grid" data-reveal>
         <MetricCard accent="teal" icon="↗" label="Open receivables" note="Across posted invoices" value={money(data.openMinor, data.currency)} />
         <MetricCard accent="gold" icon="◷" label="Overdue" note="Requires follow-up" value={money(data.overdueMinor, data.currency)} />
         <MetricCard accent="rose" icon="!" label="Disputed exposure" note="Open and under review" value={money(data.disputedMinor, data.currency)} />
         <MetricCard accent="blue" icon="↔" label="Unapplied cash" note="Confirmed receipts" value={money(data.unappliedMinor, data.currency)} />
       </section>
 
-      <section aria-label="Receivables insights" className="insight-grid">
+      <section aria-label="Receivables insights" className="insight-grid" data-reveal>
         <article className="panel aging-panel">
           <div className="panel-heading">
             <div><h2>Aging overview</h2><p>Outstanding balance by days past due</p></div>
@@ -115,7 +117,7 @@ export function OverviewDashboard({ data }: { data: DashboardData }) {
         </article>
       </section>
 
-      <section className="bottom-grid">
+      <section className="bottom-grid" data-reveal>
         <article className="panel activity-panel">
           <div className="panel-heading"><div><h2>Recent activity</h2><p>Latest events across your ledger</p></div><button aria-label="More activity options" className="more-button" type="button">•••</button></div>
           <div className="empty-state activity-empty"><span className="activity-line" /><strong>Nothing new, for now</strong><span>Imports, receipts, and collection notes will show up here.</span></div>

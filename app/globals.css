@@ -8,14 +8,22 @@
 
 :root {
   color-scheme: light;
-  --ink: #0b221f;
+  --background: #f5f8f6;
+  --foreground: #0b221f;
+  --surface: #fcfffe;
+  --surface-muted: #edf3f0;
+  --border: #e1eae5;
+  --primary: #0b221f;
+  --accent: #048ba8;
+  --highlight: #b58e43;
+  --ink: var(--foreground);
   --muted: #71817e;
-  --line: #e8eeeb;
-  --paper: #fcfffe;
-  --canvas: #f5f8f6;
-  --teal: #048ba8;
-  --deep: #0b221f;
-  --gold: #b58e43;
+  --line: var(--border);
+  --paper: var(--surface);
+  --canvas: var(--background);
+  --teal: var(--accent);
+  --deep: var(--primary);
+  --gold: var(--highlight);
   --gold-soft: #f3ead7;
   --font-body: 'Dazzed', sans-serif;
   --font-display: 'Dazzed', sans-serif;
@@ -419,7 +427,7 @@ h1 { margin-bottom: 7px; color: var(--ink); font-size: clamp(25px, 2.5vw, 31px);
 .landing-nav a:hover, .landing-signin:hover { color: var(--teal); }
 .landing-header-cta, .landing-page .button-primary { border-color: transparent; background: var(--deep); color: var(--paper); box-shadow: 0 8px 20px rgba(11, 34, 31, .16); }
 .landing-header-cta:hover, .landing-page .button-primary:hover { background: #12463e; color: var(--paper); }
-.landing-hero { width: 100%; min-height: 660px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(18px, 4vw, 55px); padding: 82px clamp(20px, 6vw, 100px) 86px; background: radial-gradient(ellipse at 76% 46%, rgba(4, 139, 168, .2), transparent 35%), linear-gradient(124deg, var(--brand-espresso), #0e302c 55%, #123c35); }
+.landing-hero { width: 100%; min-height: 660px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(18px, 4vw, 55px); padding: 82px clamp(20px, 6vw, 100px) 86px; background-image: radial-gradient(ellipse at 78% 45%, rgba(4, 139, 168, .12), transparent 38%), linear-gradient(90deg, rgba(11, 34, 31, .98) 0%, rgba(11, 34, 31, .9) 38%, rgba(11, 34, 31, .56) 74%, rgba(11, 34, 31, .72) 100%), url('/images/kredia-particle-field.png'); background-position: center, center, 68% center; background-repeat: no-repeat; background-size: cover; }
 .landing-hero::before { position: absolute; top: 10%; right: 21%; width: 540px; height: 540px; border: 1px solid rgba(245, 248, 246, .055); border-radius: 50%; box-shadow: 0 0 0 46px rgba(245, 248, 246, .018), 0 0 0 98px rgba(245, 248, 246, .014); content: ''; pointer-events: none; }
 .landing-hero-copy { max-width: 670px; padding: 0 0 18px; }
 .landing-eyebrow { color: #d4bf86; }

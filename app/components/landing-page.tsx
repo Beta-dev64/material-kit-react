@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { PageMotion } from '@/app/components/page-motion';
 
 const features = [
   {
@@ -73,7 +74,8 @@ function HeroPortrait() {
 export function LandingPage() {
   return (
     <main className="landing-page">
-      <header className="landing-header">
+      <PageMotion />
+      <header className="landing-header" data-reveal>
         <Link aria-label="Kredia home" className="landing-brand" href="/">
           <Image alt="" height={44} priority src="/branding/kredia-logo.png" width={155} />
         </Link>
@@ -93,7 +95,7 @@ export function LandingPage() {
       </header>
 
       <section aria-labelledby="landing-title" className="landing-hero">
-        <div className="landing-hero-copy">
+        <div className="landing-hero-copy" data-reveal>
           <span className="landing-eyebrow">
             <i /> RECEIVABLES, IN RHYTHM
           </span>
@@ -123,7 +125,7 @@ export function LandingPage() {
             </span>
           </div>
         </div>
-        <div className="landing-hero-visual">
+        <div className="landing-hero-visual" data-reveal>
           <HeroPortrait />
         </div>
       </section>
@@ -131,6 +133,7 @@ export function LandingPage() {
       <section
         aria-label="Kredia product principles"
         className="landing-proof-strip"
+        data-reveal
         id="principles"
       >
         <span>OPERATIONAL CONTROL, NOT ANOTHER GENERAL LEDGER</span>
@@ -145,7 +148,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section aria-labelledby="platform-title" className="landing-section" id="platform">
+      <section aria-labelledby="platform-title" className="landing-section" data-reveal id="platform">
         <div className="landing-section-heading">
           <span className="landing-eyebrow">THE WORK, IN ONE PLACE</span>
           <h2 id="platform-title">
@@ -175,7 +178,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section aria-labelledby="workflow-title" className="landing-workflow" id="how-it-works">
+      <section aria-labelledby="workflow-title" className="landing-workflow" data-reveal id="how-it-works">
         <div className="workflow-copy">
           <span className="landing-eyebrow landing-eyebrow-light">A CONTROLLED FLOW</span>
           <h2 id="workflow-title">
@@ -220,7 +223,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section aria-label="Start with Kredia" className="landing-final-cta">
+      <section aria-label="Start with Kredia" className="landing-final-cta" data-reveal>
         <div>
           <span className="landing-eyebrow">MAKE THE NEXT STEP CLEAR</span>
           <h2>Receivables deserve a better rhythm.</h2>
